@@ -1,0 +1,86 @@
+<head>
+  <!-- Agregamos iconos sociales desde fontawasome via ->Link ->URL -->
+  <script src="https://kit.fontawesome.com/035d00932a.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="layout-container">
+
+  <!-- Contenedor header -->
+  <header role="banner" class="header">
+  <!-- Contenedor superior del header -->
+  <div class="header-top"> 
+    <!-- Contenedor de los iconos sociales --> 
+    <div id="social-icons">
+        <ul>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <!-- Contenedor del user-menu -->
+    <div id="user-menu">
+        {% if page.primary_menu %}
+          <div id="links">
+            {{ page.primary_menu }}
+          </div>
+        {% endif %}
+    </div>
+  </div>
+  <hr>
+  <!-- Contenedor inferior del header -->
+  <div class="header-bottom">
+    <!-- Contenedor del site-branding -->
+    <div id="site-branding">
+      {{ page.header }}
+    </div>
+    <!-- Contenedor del main-navigation -->
+    <div id="main-navigation">
+      {% if page.secondary_menu %}
+        {{ page.secondary_menu }}
+      {% endif %}
+    </div>
+  </div>
+  </header>
+
+  <!-- Contenedor de la vista main-content -->
+  <div id="content-container">
+      <main role="main">
+          <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+          <div class="layout-content">
+            {{ page.content }}
+          </div>{# /.layout-content #}
+      </main>
+  </div>
+  
+  <!-- Contenedor del bloque footer -->
+  <div id="footer">
+    <!-- Logo a través de site-branding -->
+    <div id="site-branding">{{ page.header }}</div>
+    
+    <div id="footer-menu">
+      {% if page.footer_first %}
+        <footer role="contentinfo">
+          {{ page.footer_first }}
+        </footer>
+      {% endif %}
+    </div>
+
+    <div id="copyright">
+      <ul>
+         <li>Copyright © 2020 All rights reserved<a href="http://www.biological.mx"> Biological <i class="fa fa-copyright"></i></a></li>
+      </ul>
+    </div>
+   
+    <div id="footer-social-icons">
+        <ul>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+  </div>
+  <!-- Fin del Contenedor del bloque footer -->
+
+</div>{# /.layout-container #}
